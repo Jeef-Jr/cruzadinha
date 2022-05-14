@@ -1,0 +1,31 @@
+#Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Home h1 {
+  font-size: 100px;
+  margin-top: 40px;
+  color: white;
+}
+
+#card-cruzadinha {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 30px;
+  background-color: #3c096c;
+  border: 2px solid #7b2cbf;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

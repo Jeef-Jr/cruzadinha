@@ -1,0 +1,25 @@
+#btnletra {
+  width: 70px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #7b2cbf;
+  border: 1px solid #3a0469;
+  color: white;
+  text-transform: uppercase;
+}
+
+#btnletra:focus {
+  outline: none;
+}
+
+#block-false {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  width: 70px;
+  height: 40px;
+  color: white;
+  border: 1px solid transparent;
+}

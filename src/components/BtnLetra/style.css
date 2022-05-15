@@ -1,5 +1,5 @@
 #btnletra {
-  width: 70px;
+  width: 50px;
   height: 40px;
   font-size: 30px;
   text-align: center;
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: space-around;
   font-size: 30px;
-  width: 70px;
+  width: 50px;
   height: 40px;
   color: white;
   border: 1px solid transparent;

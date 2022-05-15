@@ -4,7 +4,8 @@ import {
   faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import { Bloco } from "../../components/Bloco";
 
 import "./style.css";
@@ -72,6 +73,7 @@ const Home = () => {
   const [onze_12, setOnze_12] = useState("");
 
   // 10 - adressbus
+  const [cinco_8, setCinco_8] = useState("");
   const [cinco_9, setCinco_9] = useState("");
   const [cinco_11, setCinco_11] = useState("");
   const [cinco_12, setCinco_12] = useState("");
@@ -119,9 +121,70 @@ const Home = () => {
   // 16 - i5
   const [quat_19, setQuat_19] = useState("");
 
-  function active() {
-    console.log(fase);
+  const [quest, setQuest] = useState("");
 
+  const perg = [
+    "Qual a tecnologia que permite o acesso aos arquivos armazenados no computador?",
+    "Oque armazena grandes quantidades de informações?",
+    "Qual é o item mais relevante do hardware?",
+    "Qual é o chip de memória que mantém seus dados quando a energia é desligada?",
+    "Oque possuí 4 núcleos de processamento no interior de um único chip?",
+    "Qual processaor foi lançado em 2008? i*-860 que possui 4 núcleos, cache L3 e frequência de 2,80GHz",
+    "Oque usa via elétrica para transferir dados entre componentes de um computador?",
+    "Oque capacita os periféricos a terem acesso direto à memória RAM?",
+    "Qual a memória é comumente usada em cartões de memória, SSD, MP3 Players entre outros?",
+    "Oque faz as transferências de dados entre dispositivos identificados pelo endereço de hardware na memória física?",
+    "Oque é circuito combinatório responsável pela execução de somas, subtrações e funções lógicas, em um sistema digital?",
+    "Oque tem dois cérebros trabalhando ao mesmo tempo pra você usar os apps ou realizar qualquer tarefa sem problemas?",
+    "Qual é a memória dentro da própria CPU que armazena (N) bits?",
+    "Oque permite a gravação de dados uma única vez, não sendo possível apagar ou editar nenhuma informação?",
+    "Qual é um mecanismo fundamental para permitir à CPU acessar memórias e/ou periféricos externos?",
+    "Qual processaor foi lançado em 2009? i*-750 que possui 4 núcleos, cache L3 de 8MB e frequência de 2,66GHz?",
+  ];
+
+  function questions() {
+    if (fase === 1) {
+      setQuest(perg[0]);
+    } else if (fase === 2) {
+      setQuest(perg[1]);
+    } else if (fase === 3) {
+      setQuest(perg[2]);
+    } else if (fase === 4) {
+      setQuest(perg[3]);
+    } else if (fase === 5) {
+      setQuest(perg[4]);
+    } else if (fase === 6) {
+      setQuest(perg[5]);
+    } else if (fase === 7) {
+      setQuest(perg[6]);
+    } else if (fase === 8) {
+      setQuest(perg[7]);
+    } else if (fase === 9) {
+      setQuest(perg[8]);
+    } else if (fase === 10) {
+      setQuest(perg[9]);
+    } else if (fase === 11) {
+      setQuest(perg[10]);
+    } else if (fase === 12) {
+      setQuest(perg[11]);
+    } else if (fase === 13) {
+      setQuest(perg[12]);
+    } else if (fase === 14) {
+      setQuest(perg[13]);
+    } else if (fase === 15) {
+      setQuest(perg[14]);
+    } else if (fase === 16) {
+      setQuest(perg[15]);
+    } else if (fase === 17) {
+      setQuest(perg[16]);
+    }
+  }
+
+  useEffect(() => {
+    questions();
+  });
+
+  function active() {
     switch (fase) {
       case 1: {
         const data = [
@@ -132,8 +195,10 @@ const Home = () => {
         const res = ["R", "A", "M"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 1");
           setFase(2);
+          document.getElementById("1").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -172,8 +237,10 @@ const Home = () => {
         ];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 2");
           setFase(3);
+          document.getElementById("2").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
 
         break;
@@ -187,8 +254,10 @@ const Home = () => {
         const res = ["U", "P", "C"];
 
         if (JSON.stringify(res) === JSON.stringify(data)) {
-          alert("acertou 3");
           setFase(4);
+          document.getElementById("3").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -203,8 +272,10 @@ const Home = () => {
         const res = ["E", "P", "R", "O", "M"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 4");
           setFase(5);
+          document.getElementById("4").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -222,8 +293,10 @@ const Home = () => {
         const res = ["Q", "U", "A", "D", "C", "O", "R", "E"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 5");
           setFase(6);
+          document.getElementById("5").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -232,8 +305,10 @@ const Home = () => {
         const res = ["I", "7"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 6");
           setFase(7);
+          document.getElementById("6").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -250,8 +325,10 @@ const Home = () => {
         const res = ["D", "A", "T", "A", "B", "U", "S"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 7");
           setFase(8);
+          document.getElementById("7").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -263,8 +340,10 @@ const Home = () => {
         ];
         const res = ["D", "M", "A"];
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 8");
           setFase(9);
+          document.getElementById("8").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -282,13 +361,16 @@ const Home = () => {
         const res = ["F", "L", "A", "S", "H"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 9");
           setFase(10);
+          document.getElementById("9").style = "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
       case 10: {
         const data = [
+          cinco_8.toUpperCase(),
           cinco_9.toUpperCase(),
           cinco_10.toUpperCase(),
           cinco_11.toUpperCase(),
@@ -299,11 +381,14 @@ const Home = () => {
           cinco_16.toUpperCase(),
           cinco_17.toUpperCase(),
         ];
-        const res = ["A", "D", "R", "E", "S", "S", "B", "U", "S"];
+        const res = ["A", "D", "D", "R", "E", "S", "S", "B", "U", "S"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 10");
           setFase(11);
+          document.getElementById("10").style =
+            "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -316,8 +401,11 @@ const Home = () => {
         const res = ["U", "L", "A"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 11");
           setFase(12);
+          document.getElementById("11").style =
+            "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -335,8 +423,11 @@ const Home = () => {
         const res = ["D", "U", "A", "L", "C", "O", "R", "E"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 12");
           setFase(13);
+          document.getElementById("12").style =
+            "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -374,8 +465,11 @@ const Home = () => {
         ];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 13");
           setFase(14);
+          document.getElementById("13").style =
+            "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -388,8 +482,11 @@ const Home = () => {
         const res = ["R", "O", "M"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("acertou 14");
           setFase(15);
+          document.getElementById("14").style =
+            "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -398,8 +495,11 @@ const Home = () => {
         const res = ["C", "S"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("Acertou 15");
           setFase(16);
+          document.getElementById("15").style =
+            "text-decoration: line-through;";
+          Swal.fire("Resposta correta!", "", "success");
+          questions();
         }
         break;
       }
@@ -408,8 +508,10 @@ const Home = () => {
         const res = ["I", "5"];
 
         if (JSON.stringify(data) === JSON.stringify(res)) {
-          alert("Acertou 16");
-          alert("Meus Parabéns, você ganhou!");
+          questions();
+          document.getElementById("16").style =
+            "text-decoration: line-through;";
+          Swal.fire("Meus Parabéns, você ganhou! 🤩🎉", "", "success");
         }
       }
     }
@@ -417,7 +519,44 @@ const Home = () => {
 
   return (
     <div id="Home">
-      <h1>Cruzadinha 😵‍💫</h1>
+      <h1>
+        Cruzadinha
+        {fase >= 1 && fase <= 5 && <>😶</>}
+        {fase > 5 && fase <= 8 && <>😏</>}
+        {fase > 8 && fase <= 15 && <>🤪</>}
+        {fase === 16 && <>🤩</>}
+      </h1>
+      <div className="level">Level: {fase}</div>
+      <div className="card_perg">{quest}</div>
+      <div className="card_palavras">
+        <div className="row">
+          <div className="column-palavras">
+            <div id="3">CPU</div>
+            <div id="11">ULA</div>
+            <div id="13">REGISTRADORES</div>
+            <div id="1">RAM</div>
+          </div>
+          <div className="column-palavras">
+            <div id="14">ROM</div>
+            <div id="4">EPROM</div>
+            <div id="9">FLASH</div>
+            <div id="2">MEMÓRIA DE MASSA</div>
+          </div>
+          <div className="column-palavras">
+            <div id="8">DMA</div>
+            <div id="15">CS</div>
+            <div id="10">ADDRESS BUS</div>
+            <div id="7">DATA BUS</div>
+          </div>
+          <div className="column-palavras">
+            <div id="16">I5</div>
+            <div id="6">I7</div>
+            <div id="12">DUAL CORE</div>
+            <div id="5">QUAD CORE</div>
+          </div>
+        </div>
+        <span>Na cruzadinha as palavras não possuí assentos e espaços.</span>
+      </div>
       <div id="card-cruzadinha">
         <Bloco
           cl={0}
@@ -532,8 +671,13 @@ const Home = () => {
         {/* 5 */}
         <Bloco
           cl={5}
-          number8={10}
-          icon8={<FontAwesomeIcon icon={faArrowDown} />}
+          number7={10}
+          icon7={<FontAwesomeIcon icon={faArrowDown} />}
+          // --
+          status8={true}
+          keyup8={() => active(4)}
+          value8={cinco_8}
+          change8={(e) => setCinco_8(e.target.value)}
           // --
           status4={true}
           keyup4={() => active(4)}

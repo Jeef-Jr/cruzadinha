@@ -29,3 +29,48 @@
   display: flex;
   flex-direction: column;
 }
+
+.level {
+  font-size: 60px;
+  color: white;
+}
+
+.card_perg {
+  background-color: #7b2cbf;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  font-size: 30px;
+  height: 40px;
+}
+
+.card_palavras {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: white;
+  width: 900px;
+  border: 3px solid #8b29e0;
+}
+
+.card_palavras span {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-palavras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  width: 33%;
+  height: 150px;
+}
